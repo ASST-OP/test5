@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>String Concatenation</title>
+    <title>コード作成用</title>
 </head>
 <body>
 
     <label for="string1">転送先リンク</label>
     <input type="text" id="string1">
 
-    <label for="string2">あ</label>
+    <label for="string2">説明文(大)</label>
     <input type="text" id="string2">
 
-    <label for="string3">い</label>
+    <label for="string3">説明文(小)</label>
     <input type="text" id="string3">
 
     <button onclick="concatAndCopy()">Concatenate and Copy</button>
@@ -26,7 +26,23 @@
             var string3 = document.getElementById("string3").value;
 
             // 文字列を連結
-            var resultString = "a" + string1 + "b" + string2 + "c" + string3 + "d";
+            var resultString = "<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh"content="0;URL=" + string1 + "">
+<meta charset="UTF-8">
+<title>LINE OPENCHAT</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta property="og:title" content="" + string2 + "">
+<meta property="og:type" content="website">
+<meta property="og:description" content="" + string3 + "">
+<meta property="og:url" content="http://line.me/ti/g2/4mKpJGgRqGxXOgcK1VoKPYKRTFwbZNTj-3ffEw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default">
+<meta property="og:image" content="https://profile.line-scdn.net/r/g2/group/og_tag_default_image.png/c.496x273">
+<meta property="og:site_name" content="LINE OPENCHAT">
+<meta property="fb:app_id" content="136895609724349">";
 
             // 作成した文字列をクリップボードにコピー
             var tempInput = document.createElement("input");
