@@ -1,12 +1,44 @@
-<!DOCTYP html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>test</title>
-  </head>
-  <body>
-    <h1>test1</h1>
-    <p>test2</p>
-    <p>test3</p>
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Concatenation</title>
+</head>
+<body>
+
+    <label for="string1">転送先リンク</label>
+    <input type="text" id="string1">
+
+    <label for="string2">あ</label>
+    <input type="text" id="string2">
+
+    <label for="string3">い</label>
+    <input type="text" id="string3">
+
+    <button onclick="concatAndCopy()">Concatenate and Copy</button>
+
+    <script>
+        function concatAndCopy() {
+            // ユーザーが入力した文字列を取得
+            var string1 = document.getElementById("string1").value;
+            var string2 = document.getElementById("string2").value;
+            var string3 = document.getElementById("string3").value;
+
+            // 文字列を連結
+            var resultString = "a" + string1 + "b" + string2 + "c" + string3 + "d";
+
+            // 作成した文字列をクリップボードにコピー
+            var tempInput = document.createElement("input");
+            tempInput.value = resultString;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            alert("Copied to clipboard: " + resultString);
+        }
+    </script>
+
+</body>
 </html>
